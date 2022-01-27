@@ -32,7 +32,6 @@ function handleSubmit(event) {
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
-
 }
 
 // DONE: Add the selected item and quantity to the cart
@@ -59,10 +58,27 @@ function updateCounter() {
   }
 }
 
-// TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
+// DONE: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
-  // TODO: Get the item and quantity from the form
-  // TODO: Add a new element to the cartContents div with that information
+  // cart preview div = cartContents
+  let cartContentsElem = document.getElementById('cartContents');
+  // DONE: Get the item and quantity from the form
+  const selectElement = document.getElementById('items')
+  let selectedItem = selectElement.value;
+
+  const quantityElement = document.getElementById('quantity');
+  let selectedQty = +quantityElement.value;
+
+  let ulElem;
+
+  if (ulElem === undefined) {
+    ulElem = document.createElement('ul');
+    cartContentsElem.appendChild(ulElem);
+  }
+  // DONE: Add a new element to the cartContents div with that information
+  let liElem = document.createElement('li');
+  liElem.innerText = `${selectedItem}: ${selectedQty}`
+  ulElem.appendChild(liElem);
 }
 
 // Set up the "submit" event listener on the form.
