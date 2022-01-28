@@ -26,18 +26,18 @@ function clearCart() {
   }
 }
 
-// TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
+// Done: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
-  // TODO: Find the table body
+  // Done: Find the table body
   let tBodyElem = document.querySelector('tbody');
 
-  // TODO: Iterate over the items in the cart
+  // Done: Iterate over the items in the cart
   for (let i in cart){
-    // TODO: Create a TR
+    // Done: Create a TR
     let trElem = document.createElement('tr');
 
-    // TODO: Create a TD for the delete link, quantity,  and the item
+    // Done: Create a TD for the delete link, quantity,  and the item
     let tdElemDelete = document.createElement('td');
     let tdElemQty = document.createElement('td');
     let tdElemItem = document.createElement('td');
@@ -47,7 +47,7 @@ function showCart() {
     tdElemItem.textContent = cart.items[i].name;
     trElem.appendChild(tdElemDelete);
     trElem.appendChild(tdElemQty);
-    // TODO: Add the TR to the TBODY and each of the TD's to the TR
+    // Done: Add the TR to the TBODY and each of the TD's to the TR
     trElem.appendChild(tdElemItem);
     tBodyElem.appendChild(trElem);
   }
